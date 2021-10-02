@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargePdf console", "LargePdf console\LargePdf console.csproj", "{B0CF5BD0-3D97-451E-828C-0E945904F3CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargePdf consoleTests", "LargePdf consoleTests\LargePdf consoleTests.csproj", "{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,11 +23,20 @@ Global
 		{B0CF5BD0-3D97-451E-828C-0E945904F3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0CF5BD0-3D97-451E-828C-0E945904F3CA}.Release|x64.ActiveCfg = Release|x64
 		{B0CF5BD0-3D97-451E-828C-0E945904F3CA}.Release|x64.Build.0 = Release|x64
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Debug|x64.Build.0 = Debug|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Release|x64.ActiveCfg = Release|Any CPU
+		{E5CDC542-F7A8-44AB-970A-4C83C9574CB6}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 		SolutionGuid = {9ECD93C7-F3E0-444D-AD53-2467DB1BB3A2}
 	EndGlobalSection
 EndGlobal

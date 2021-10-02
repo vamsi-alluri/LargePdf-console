@@ -1,30 +1,45 @@
 ﻿using System;
+using static LargePdf_console.Extensions;
 
 namespace LargePdf_console
 {
     public class Program
     {
-        public static string CurrentDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         [STAThread]
-        public static void Main(string[] args)
+        public static void Main()
         {
-            do
+
+            Console.ResetColor();
+            exceptionCount = 0;
+
+
+            using (var converter = new ImageToPdf())
             {
-                ImageToPdf converter = new ImageToPdf();
-                if (!converter.ConvertImageToPdf())
-                    return;
-            } while (ShouldContinue());
+                do
+                {
+                    if (!converter.TryConvertingImageToPdf())
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\n****** Converting failed with exceptions. ******\n");
+                        Console.ResetColor();
+                        exceptionCount++;
+                    }
+
+                } while (ShouldProgramContinue(exceptionCount >= 4));
+            }
         }
 
-        private static bool ShouldContinue(bool? value = null)
+        private static bool ShouldProgramContinue(bool? value = null)
         {
             Console.Clear();
-            Console.WriteLine("\nWant to convert another pdf. (Y)");
+            if (value == false)
+            {
+                Console.WriteLine("Force shutdown. Might had more than 3 exceptions.");
+                return false;
+            }
+            Console.WriteLine("\nAnother pdf? (Y/N)");
             return value ?? IsYes(Console.ReadKey().KeyChar);
         }
-
-        public static bool IsYes(char value) => value == 'Y' || value == 'y';
-
     }
 }
